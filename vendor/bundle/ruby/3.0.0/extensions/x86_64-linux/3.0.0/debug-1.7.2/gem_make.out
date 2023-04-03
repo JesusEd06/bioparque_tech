@@ -1,0 +1,16 @@
+current directory: /home/jesused06/bioparque_tech/vendor/bundle/ruby/3.0.0/gems/debug-1.7.2/ext/debug
+/home/jesused06/.rbenv/versions/3.0.2/bin/ruby -I /home/jesused06/.rbenv/versions/3.0.2/lib/ruby/3.0.0 -r ./siteconf20230402-14452-vti39k.rb extconf.rb
+creating Makefile
+
+current directory: /home/jesused06/bioparque_tech/vendor/bundle/ruby/3.0.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/jesused06/bioparque_tech/vendor/bundle/ruby/3.0.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/jesused06/bioparque_tech/vendor/bundle/ruby/3.0.0/gems/debug-1.7.2/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20230402-14452-7o3n9/debug
