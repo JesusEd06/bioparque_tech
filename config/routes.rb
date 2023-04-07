@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :campaigns
+  get 'mobility/index'
+  get 'services/index'
+  get 'workshops/index'
+  get 'ecotourism/index'
   mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   root to: 'home#index'
 
