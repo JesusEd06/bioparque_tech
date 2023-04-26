@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_03_000244) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_07_145452) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -58,6 +58,35 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_000244) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "campaigns", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.text "description"
+    t.string "image_url"
+    t.text "content"
+    t.decimal "goal_amount"
+    t.decimal "current_amount"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contributions", force: :cascade do |t|
+    t.decimal "amount"
+    t.string "payment_method"
+    t.datetime "contribution_date"
+    t.integer "user_id", null: false
+    t.integer "campaign_id", null: false
+    t.integer "reward_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_contributions_on_campaign_id"
+    t.index ["reward_id"], name: "index_contributions_on_reward_id"
+    t.index ["user_id"], name: "index_contributions_on_user_id"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -71,6 +100,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_000244) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "order_rewards", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "reward_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_rewards_on_order_id"
+    t.index ["reward_id"], name: "index_order_rewards_on_reward_id"
+  end
+
   create_table "paypal_commerce_platform_sources", force: :cascade do |t|
     t.integer "payment_method_id"
     t.string "authorization_id"
@@ -81,6 +119,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_000244) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.integer "paypal_funding_source"
+  end
+
+  create_table "product_rewards", force: :cascade do |t|
+    t.integer "quantity_available"
+    t.integer "quantity_claimed"
+    t.integer "product_id", null: false
+    t.integer "reward_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_rewards_on_product_id"
+    t.index ["reward_id"], name: "index_product_rewards_on_reward_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "image_url"
+    t.decimal "threshold"
+    t.integer "quantity_available"
+    t.integer "campaign_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_rewards_on_campaign_id"
   end
 
   create_table "spree_addresses", force: :cascade do |t|
@@ -1231,11 +1292,32 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_000244) do
     t.datetime "updated_at"
   end
 
+  create_table "user_campaigns", force: :cascade do |t|
+    t.decimal "amount_contributed"
+    t.boolean "claimed_rewards"
+    t.integer "user_id", null: false
+    t.integer "campaign_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_user_campaigns_on_campaign_id"
+    t.index ["user_id"], name: "index_user_campaigns_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "contributions", "campaigns"
+  add_foreign_key "contributions", "rewards"
+  add_foreign_key "contributions", "spree_users", column: "user_id"
+  add_foreign_key "order_rewards", "orders"
+  add_foreign_key "order_rewards", "rewards"
+  add_foreign_key "product_rewards", "products"
+  add_foreign_key "product_rewards", "rewards"
+  add_foreign_key "rewards", "campaigns"
   add_foreign_key "spree_promotion_code_batches", "spree_promotions", column: "promotion_id"
   add_foreign_key "spree_promotion_codes", "spree_promotion_code_batches", column: "promotion_code_batch_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_categories", column: "tax_category_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_rates", column: "tax_rate_id"
   add_foreign_key "spree_wallet_payment_sources", "spree_users", column: "user_id"
+  add_foreign_key "user_campaigns", "campaigns"
+  add_foreign_key "user_campaigns", "spree_users", column: "user_id"
 end

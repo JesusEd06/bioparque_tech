@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  resources :campaigns
-  get 'mobility/index'
-  get 'services/index'
-  get 'workshops/index'
-  get 'ecotourism/index'
+  resources :blogs
   mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   root to: 'home#index'
+  
+  resources :campaigns
+  resources :mobility, only: [:index]
+  resources :services, only: [:index]
+  resources :workshops, only: [:index]
+  resources :ecotourism, only: [:index]
 
   devise_for(:user, {
     class_name: 'Spree::User',

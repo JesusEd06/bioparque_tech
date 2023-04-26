@@ -1,4 +1,5 @@
 class CampaignsController < ApplicationController
+
   before_action :set_campaign, only: %i[ show edit update destroy ]
 
   # GET /campaigns or /campaigns.json

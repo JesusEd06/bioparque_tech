@@ -4,17 +4,21 @@
   </div>
   <div class="header__primary-navigation">
     <div class="category-navigation">
-      <% categories = taxonomies.first %>
-
+      
       <nav class="categories">
-        <% cache [I18n.locale, categories, taxon] do %>
-          <%= render(TaxonsTreeComponent.new(
-            root_taxon: categories.root,
-            current_taxon: taxon,
-            max_level: 1,
-            base_class: 'categories')) if categories %>
-        <% end %>
-      </nav>
+        <ul class="categories__list">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><a href="#">Online Store</a></li>
+          <li><%= link_to 'Ecotourism', ecotourism_index_path %></li>
+          <li><%= link_to 'Workshops', workshops_path %></li>
+          <li><%= link_to 'Services', services_path %></li>
+          <li><%= link_to 'Mobility', mobility_index_path %></li>
+          <li><%= link_to 'Campaigns', campaigns_path %></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      <nav>
+
     </div>
   </div>
 </header>
