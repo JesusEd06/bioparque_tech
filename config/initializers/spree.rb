@@ -82,3 +82,5 @@ end
 # the class name:
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
+
+Spree::PermittedAttributes.source_attributes << :auth_token
