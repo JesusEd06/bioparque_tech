@@ -140,7 +140,7 @@ module Spree
     # @!attribute [rw] currency
     #   Currency to use by default when not defined on the site (default: +"USD"+)
     #   @return [String] ISO 4217 Three letter currency code
-    preference :currency, :string, default: "USD"
+    preference :currency, :string, default: "MXN"
 
     # @!attribute [rw] customer_returns_per_page
     #   @return [Integer] Customer returns to show per-page in the admin (default: +15+)
@@ -149,7 +149,7 @@ module Spree
     # @!attribute [rw] default_country_iso
     #   Default customer country ISO code
     #   @return [String] Two-letter ISO code of a {Spree::Country} to assumed as the country of an unidentified customer (default: "US")
-    preference :default_country_iso, :string, default: 'US'
+    preference :default_country_iso, :string, default: 'MX'
 
     # @!attribute [rw] default_email_regexp
     #   @return [Regexp] Regex to be used in email validations, for example in Spree::EmailValidator

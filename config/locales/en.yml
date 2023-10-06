@@ -34,5 +34,7 @@ en:
   navbar:
     campaigns:
       title: "Campaign"
-
+  activerecord:
+    models:
+      conekta/payment_method: Conekta payment
 
