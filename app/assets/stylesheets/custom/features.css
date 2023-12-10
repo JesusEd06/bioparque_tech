@@ -1,0 +1,31 @@
+.features h2 {
+    color: #4f4f4f;
+    font-size: 43px;
+    margin: 115px 0;
+    text-align: center;
+  }
+  .features .text-img {
+      width: 315px;
+  }
+  .text-img.left {
+    float: left;
+  }
+  .text-img.center {
+    margin: 0 auto;
+  }
+  .text-img.right {
+    float: right;
+  }
+  .features h3 {
+    color: #4f4f4f;
+    font-size: 26px;
+    padding: 20px 0px;
+      font-family: 'Roboto', sans-serif;
+  }
+  .features p {
+    color: #958e8e;
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+  }

@@ -2,6 +2,10 @@
 
 <%= render 'welcome' %>
 
+<%= render 'pilares' %>
+
+<%= render 'team' %>
+
 <article>
   <% cache(cache_key_for_products) do %>
     <%= render 'products/products', products: @products %>

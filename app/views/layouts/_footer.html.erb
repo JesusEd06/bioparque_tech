@@ -1,27 +1,48 @@
-<footer class="footer">
-  <p>
-    <%= t 'spree.powered_by' %> <%= link_to 'Solidus', 'http://solidus.io/' %>
-  </p>
-
-  <%
-    available_locales = current_store.available_locales.map do |locale|
-      [
-        I18n.t('spree.i18n.this_file_language',
-        locale: locale,
-        default: locale.to_s,
-        fallback: false), locale
-      ]
-    end.sort
-  %>
-
-  <% if available_locales.many? %>
-    <div class="locale-selector">
-      <%= form_tag select_locale_path do %>
-        <div class="locale-selector__select-input select-input">
-          <%= label_tag :switch_to_locale, "#{t('spree.i18n.language')}:" %>
-          <%= select_tag(:switch_to_locale, options_for_select(available_locales, I18n.locale)) %>
+<footer>
+  <div class="footer_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>REDES SOCIALES</h2>
+          <%= link_to("<p><i class='fa fa-circle' aria-hidden='true'></i>THE NEW TECHNOCHTITLAN</p>".html_safe, "#") %>
+          <!-- Repite el patrón anterior para los otros enlaces -->
         </div>
-      <% end %>
+        <div class="col-md-4 center">
+          <h2>CONOCE MÁS</h2>
+          <%= link_to("<p><i class='fa fa-circle' aria-hidden='true'></i>PERMACULTURA</p>".html_safe, "#") %>
+          <!-- Repite el patrón anterior para los otros enlaces -->
+        </div>
+        <div class="col-md-4">
+          <div class="footer-contact">
+            <h2>CONTACT US</h2>
+            <%= link_to("<p><i class='fa fa-map-marker' aria-hidden='true'></i>Rio blanco, Veracruz</p>".html_safe, "#") %>
+            <%= link_to("<p><i class='fa fa-phone' aria-hidden='true'></i>+52 123455678</p>".html_safe, "#") %>
+            <%= link_to("<p><i class='fa fa-envelope' aria-hidden='true'></i>tenochtitlan@gmail.com</p>".html_safe, "#") %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
+  <div class="footer_bottom">
+    <div class="footer_overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="copy_txt">
+            <p>Copyright © 2023  Designed by <span>THE NEW TECHNOCHTITLAN S de RL de CV</span></p>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="footer_logo">
+            <%= image_tag("img/fedex.png") %>
+            <%= image_tag("img/master-card.png") %>
+            <%= image_tag("img/paypal.png") %>
+            <%= image_tag("img/visa.png") %>
+            <%= image_tag("img/american-express.png") %>
+            <%= image_tag("img/dhl.png") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>

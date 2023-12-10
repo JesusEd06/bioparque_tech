@@ -1,0 +1,31 @@
+.progress-bar{
+    background-color: #1cff3a;
+}
+.progress_bar {
+  padding-left: 105px;
+}
+.progress_bar p {
+  color: #564f4f;
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+.progress {
+  height: 10px;
+  margin-bottom: 10px;
+}
+.our_skill h2 {
+  color: #4f4f4f;
+  font-family: "Roboto",sans-serif;
+  font-size: 43px;
+  font-weight: 400;
+  margin: 100px 0 50px;
+}
+.our_skill .text {
+  padding-right: 105px;
+}
+.our_skill .text p{
+    font-size: 18px;
+    color: #958e8e;
+    line-height: 35px;
+    font-weight: 400;
+}
