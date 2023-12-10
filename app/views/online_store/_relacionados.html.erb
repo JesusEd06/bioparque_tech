@@ -1,0 +1,38 @@
+<div class="related-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bar">
+          <h2>Recomendados</h2>
+          <%= image_tag("img/bar.jpg", alt: "Bar Image") %>
+        </div>
+      </div>
+    </div>
+    <div class="product">
+      <div class="row">
+        <% @products.each do |product| %>
+          <div class="col-md-3">
+            <div class="s_product">
+              <%= render(ImageComponent.new(
+                image: product.gallery.images.first,
+                size: :product,
+                itemprop: "image",
+                data: { js: 'product-main-image' }
+              )) %>
+              <div class="s_overlay"></div>
+              <h3><%= product.name %></h3>
+              <%= link_to "Añadir al carrito", "#", class: "btn btn-primary" %>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="rate">
+                  <h5><%= number_to_currency(product.price) %></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

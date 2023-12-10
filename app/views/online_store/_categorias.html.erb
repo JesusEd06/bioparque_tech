@@ -1,0 +1,25 @@
+<section class="product-s-display">
+  <div class="container">
+    <div class="row">
+      <% products = [
+        { name: 'Hogar', image: 'hogar1.jpg', path: '../t/hogar' },
+        { name: 'Hotelería', image: 'hoteleria (1).jpg', path: '../t/hoteleria' },
+        { name: 'Jardín', image: 'jardin (1).jpg', path: '../t/jardin' },
+        { name: 'Restaurante-Bar', image: 'bar (1).jpg', path: '../t/restaurante-bar' },
+        { name: 'Entretenimiento', image: 'carro12 (1).png', path: '../t/entretenimiento' },
+        { name: 'Papelería', image: 'papeleria (1).jpg', path: '../t/papeleria' }
+      ] %>
+
+      <% products.each do |product| %>
+        <div class="col-md-4">
+          <div class="s_display">
+            <%= link_to product[:path] do %>
+              <%= image_tag("img/#{product[:image]}", alt: '') %>
+              <h2 class="titulo-producto"><%= product[:name] %></h2>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

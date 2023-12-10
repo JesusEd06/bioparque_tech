@@ -1,0 +1,26 @@
+.s_display {
+    width: 395px;
+  }
+  .product-s-display .s_display  img {
+    width: 100%;
+      position: relative
+  }
+  .product-s-display .s_display {
+    position: relative
+  }
+  .product-s-display .s_display h2.titulo-producto {
+    bottom: 0;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    padding: 15px;
+    margin: 0;
+      opacity: 0
+  }
+  .product-s-display .s_display:hover  h2.titulo-producto{
+      opacity: 1
+  }

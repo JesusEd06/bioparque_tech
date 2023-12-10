@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'online_store/index'
   resources :blogs
   mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   root to: 'home#index'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   resources :services, only: [:index]
   resources :workshops, only: [:index]
   resources :ecotourism, only: [:index]
+  resources :online_store, only: [:index]
 
   devise_for(:user, {
     class_name: 'Spree::User',

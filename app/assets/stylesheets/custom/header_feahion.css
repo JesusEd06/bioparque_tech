@@ -1,0 +1,27 @@
+.header-feahion {
+    position: relative;
+      margin: 35px 0
+  }
+  .header-feahion .header-text {
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 20%;
+  }
+  .header-feahion .header-text h4{
+    color: #d8d8d8;
+      font-size: 21px;
+      font-weight: 400;
+      font-family: "Roboto",sans-serif;
+  }
+  .header-feahion .header-text h3{
+    color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Roboto",sans-serif;
+  }
+  .header-feahion > img {
+    width: 100%;
+    height: 565px;
+  }
