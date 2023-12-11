@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_26_234657) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_11_151109) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -77,6 +77,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_26_234657) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conekta_payment_sources", force: :cascade do |t|
+    t.integer "payment_method_id"
+    t.string "auth_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -280,6 +287,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_26_234657) do
     t.integer "payment_method_id"
     t.boolean "default", default: false, null: false
     t.integer "address_id"
+    t.string "auth_token"
     t.index ["payment_method_id"], name: "index_spree_credit_cards_on_payment_method_id"
     t.index ["user_id"], name: "index_spree_credit_cards_on_user_id"
   end

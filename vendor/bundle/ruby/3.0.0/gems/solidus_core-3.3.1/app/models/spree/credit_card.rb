@@ -13,6 +13,7 @@ module Spree
 
     attr_reader :number, :verification_value
     attr_accessor :encrypted_data
+    attr_accessor :auth_token
 
     validates :month, :year, numericality: { only_integer: true }, if: :require_card_numbers?, on: :create
     validates :number, presence: true, if: :require_card_numbers?, on: :create, unless: :imported
