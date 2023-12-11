@@ -1,2 +1,57 @@
-<h1>Ecotourism#index</h1>
-<p>Find me in app/views/ecotourism/index.html.erb</p>
+<%= render 'fashion' %>
+
+<div class="container mt-4">
+  <!-- Camping -->
+  <section class="row mb-4">
+    <div class="col-md-6 d-flex align-items-center">
+      <%= image_tag("img/camping.jpg", alt: "Camping en la naturaleza", class: "img-fluid") %>
+    </div>
+    <div class="col-md-6 d-flex align-items-center">
+      <div class="text-center text-md-start">
+        <h2 class="title-bio">Camping</h2>
+        <p>Disfruta de la experiencia única de acampar en medio de la naturaleza en nuestro bioparque. Descubre la belleza de la noche estrellada y la vida silvestre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Picnic -->
+  <section class="row mb-4">
+    <div class="col-md-6 order-md-2 d-flex align-items-center">
+      <%= image_tag("img/picnic.jpg", alt: "Picnic en el bioparque", class: "img-fluid") %>
+    </div>
+    <div class="col-md-6 order-md-1 d-flex align-items-center">
+      <div class="text-center text-md-start">
+        <h2 class="title-bio">Picnic</h2>
+        <p>Pasa un día agradable con tu familia y amigos en nuestras áreas de picnic. Relájate y disfruta de la comida al aire libre en un entorno natural.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avistamiento de Aves -->
+  <section class="row mb-4">
+    <div class="col-md-6 d-flex align-items-center">
+      <%= image_tag("img/aves.jpg", alt: "Avistamiento de aves en el bioparque", class: "img-fluid") %>
+    </div>
+    <div class="col-md-6 d-flex align-items-center">
+      <div class="text-center text-md-start">
+        <h2 class="title-bio">Avistamiento de Aves</h2>
+        <p>Explora la diversidad de aves que habitan en nuestro bioparque. Un paraíso para los amantes de la ornitología.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Área de Niños -->
+  <section class="row mb-4">
+    <div class="col-md-6 order-md-2 d-flex align-items-center">
+      <%= image_tag("img/area-ninos.jpg", alt: "Área de juegos para niños", class: "img-fluid") %>
+    </div>
+    <div class="col-md-6 order-md-1 d-flex align-items-center">
+      <div class="text-center text-md-start">
+        <h2 class="title-bio">Área de Niños</h2>
+        <p>Diviértete en familia en nuestro área especialmente diseñada para los más pequeños. Juegos y entretenimiento en un entorno seguro y natural.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Otros apartados (añadir según necesites) -->
+</div>

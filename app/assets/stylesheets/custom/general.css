@@ -1,3 +1,40 @@
 a{
     text-decoration: none  !important;
 }
+h2.logo-principal {
+    color: #4f4f4f;
+    font-family: "Roboto",sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+}
+.categories__list li a{
+    color: #665f5f;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+.categories__list li a:hover{
+    background: #fff;
+    color: #00f535
+}
+.categories__list li.active a{
+    font-weight: bold;
+    color: #43e9ff !important;
+}
+
+h2.title-bio {
+    color: #4f4f4f;
+    font-family: "Roboto",sans-serif;
+    font-size: 43px;
+    font-weight: 400;
+}
+p.text-bio{
+    font-size: 18px;
+    color: #958e8e;
+    line-height: 35px;
+    font-weight: 400;
+}
+.img-workshops{
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+}

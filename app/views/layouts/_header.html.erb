@@ -7,15 +7,22 @@
       
       <nav class="categories">
         <ul class="categories__list">
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Online Store', online_store_index_path %></li>
-          <li><%= link_to 'Ecotourism', ecotourism_index_path %></li>
-          <li><%= link_to 'Workshops', workshops_path %></li>
-          <li><%= link_to 'Services', services_path %></li>
-          <li><%= link_to 'Mobility', mobility_index_path %></li>
-          <li><%= link_to 'Campaigns', campaigns_path %></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Blog</a></li>
+          <li class="<%= nav_link_class(root_path) %>"><%= link_to 'Home', root_path %></li>
+          <li class="<%= nav_link_class(online_store_index_path) %>"><%= link_to 'Online Store', online_store_index_path %></li>
+            <ul class="submenu">
+              <li><%= link_to 'Hogar', '../t/hogar' %></li>
+              <li><%= link_to 'Hoteleria', '../t/hoteleria' %></li>
+              <!-- Otros elementos del submenú -->
+            </ul>
+          <li class="<%= nav_link_class(ecotourism_index_path) %>"><%= link_to 'Ecotourism', ecotourism_index_path %></li>
+          <li class="<%= nav_link_class(workshops_path) %>"><%= link_to 'Workshops', workshops_path %></li>
+          <!--
+          <li class="<%= nav_link_class(services_path) %>"><%= link_to 'Services', services_path %></li> 
+          -->
+          <li class="<%= nav_link_class(mobility_index_path) %>"><%= link_to 'Mobility', mobility_index_path %></li>
+          <li class="<%= nav_link_class(campaigns_path) %>"><%= link_to 'Campaigns', campaigns_path %></li>
+          <li class=""><a href="#">Events</a></li>
+          <li class=""><a href="#">Blog</a></li>
         </ul>
       <nav>
 

@@ -1,0 +1,40 @@
+/* Estilos para el contenedor de los círculos */
+.venn-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Estilos para los círculos */
+.circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: spin 6s linear infinite; /* Ajusta la duración y el tipo de animación según tu preferencia */
+}
+/* Estilos para los círculos con animación retrasada */
+.circle:nth-child(1) {
+    animation-delay: 0s; /* El primer círculo comienza de inmediato */
+}
+
+.circle:nth-child(2) {
+    animation-delay: 2s; /* El segundo círculo comienza después de 2 segundos */
+}
+
+.circle:nth-child(3) {
+    animation-delay: 4s; /* El tercer círculo comienza después de 4 segundos */
+}
+
+/* Animación de giro */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
